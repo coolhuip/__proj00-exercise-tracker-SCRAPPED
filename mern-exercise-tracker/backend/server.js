@@ -16,5 +16,5 @@ app.use(express.json());    // This allows us to parse JSON, since our
 
 // This starts the server. It starts listening on a certain port.
 app.listen(port, () => {
-    console.log('Server is running on port: ${port}');
+    console.log(`Server is running on port: ${port}`);
 });
