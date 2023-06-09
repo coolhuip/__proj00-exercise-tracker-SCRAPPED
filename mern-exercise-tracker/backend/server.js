@@ -18,7 +18,7 @@ app.use(express.json());    // This allows us to parse JSON, since our
                             // server will be receiving AND sending JSON.
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
+mongoose.connect(uri, { useNewUrlParser: true }
 );
 const connection = mongoose.connection;
 connection.once('open', () => {
