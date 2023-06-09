@@ -1,5 +1,8 @@
-const express = require('express');   // We need to require() all the
-const cors = require('cors');         // stuff that we will need.
+// We need to require() all the stuff that we need.
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');   // Mongoose helps us connect to
+                                        // our MongoDB database.
 
 require('dotenv').config(); // This configures s.t. we can have our
                             // environment variables in the dotenv file.
@@ -13,6 +16,14 @@ app.use(cors());    // This is the CORS middleware.
                     // CORS = Cross-Origin Resource Sharing
 app.use(express.json());    // This allows us to parse JSON, since our
                             // server will be receiving AND sending JSON.
+
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
+);
+const connection = mongoose.connection;
+connection.once('open', () => {
+    console.log("MongoDB database connection established successfully.")
+});
 
 // This starts the server. It starts listening on a certain port.
 app.listen(port, () => {
