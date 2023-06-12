@@ -9,6 +9,7 @@ import CreateUser from "./components/create-user.component";
 
 function App() {
   return (
+    // Inside the <Router> element is where we build our app.
     <Router>
       <Navbar />
       <br/>
