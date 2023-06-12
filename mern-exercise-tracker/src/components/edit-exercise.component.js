@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-export default class EditExercises extends Component {
+export default class EditExercise extends Component {
     render() {
         return(
             <div>
-                <p>You are on the Edit Exercises component!</p>
+                <p>You are on the Edit Exercise component!</p>
             </div>
         )
     }
