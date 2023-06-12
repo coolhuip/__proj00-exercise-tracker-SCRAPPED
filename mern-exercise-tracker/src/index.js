@@ -1,6 +1,6 @@
 /** 
  * This is the React app that loads in index.html
-*/
+ */
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
